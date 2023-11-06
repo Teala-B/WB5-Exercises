@@ -49,5 +49,24 @@ function findName(classes) {
     return classes.CourseId == "PROJ500";
 }
 
-let courseName = courses.find(findCourse).Title;
+let courseName = courses.find(findName).Title;
 console.table("The name of PROJ500 is " + courseName);
+
+function filterByPrice(classes) {
+    return classes.Fee == "50.00";
+    // lessCost = parseInt(courses.Fee)
+    // if(lessCost <= 50)
+    // return lessCost;
+}
+
+let coursePrice = courses.filter(filterByPrice)
+console.log("The courses that are $50 are ");
+console.table(coursePrice);
+
+function findClassroom(classes) {
+    return classes.Location == "Classroom 1"
+}
+
+let classLocation = courses.filter(findClassroom)
+console.log("The courses in Classroom 1 are ");
+console.table(classLocation);
